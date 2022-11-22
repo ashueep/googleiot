@@ -4,9 +4,15 @@ from .models import Org, Proj
 class OrgSerializer(serializers.ModelSerializer):
     class Meta:
         model = Org 
-        fields = ['name']
+        fields = ['id', 
+        'name', 
+        'created_on'
+        ]
 
 class ProjSerializer(serializers.ModelSerializer):
     class Meta:
         model = Proj 
-        fields = ['name', 'org']
+        fields = ['id', 
+        'name', 
+        'org'
+        ]

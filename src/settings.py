@@ -32,7 +32,9 @@ AUTH_USER_MODEL = "User.User"
 
 INSTALLED_APPS = [
     'User',
+    'IOT',
     'Organization',
+    'rest_framework_simplejwt',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +53,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
 
 ROOT_URLCONF = 'src.urls'
 
